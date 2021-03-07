@@ -2,7 +2,7 @@ const { Router } = require('express');
 const routes = Router();
 
 routes.get('/', (req, res) => {
-	res.json({ status: true })
+	return res.json({ status: true }).send();
 });
 
 module.exports = routes;
