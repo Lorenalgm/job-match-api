@@ -1,9 +1,12 @@
 const Candidate = require('../models/Candidate');
+const api = require('../services/api');
 
 module.exports = {
   async index(request, response) {
+    const candidates = await api.get(`/code_challenge.json`);
 
-    const candidates = await Candidate.find();
+    // if necessary to list the candidates from this api
+    // const candidates = await Candidate.find();
 
     return response.json(candidates);
   },
