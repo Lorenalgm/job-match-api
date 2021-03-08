@@ -8,7 +8,7 @@ module.exports = {
     // if necessary to list the candidates from this api
     // const candidates = await Candidate.find();
 
-    return response.json(candidates);
+    return response.json(candidates.data.candidates);
   },
 
   async store(request, response) {
