@@ -18,7 +18,11 @@ module.exports = {
     }
 
     if(filters.techs){
-      console.log(filters.techs)
+      const technologies = filters.techs.split(",");
+
+      for(tech of technologies){
+        filteredCandidates = filteredCandidates.filter(candidate => candidate.technologies.map(teste => teste.name.includes(tech)).includes(true));
+      }
     }
 
     if(filteredCandidates.length > 5){
